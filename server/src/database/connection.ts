@@ -1,12 +1,21 @@
 import knex from 'knex';
-import path from 'path';
+import path from 'path' 
 
 const connection = knex({
-    //mudar pra SQLSERVER, SÓ VER A DOCUMENTAÇÃO
-    client: 'sqlite3',
+    client:'sqlite3',
     connection: {
-        filename: path.resolve(__dirname, 'database.sqlite'),
-    }
+        //__dirname: vai retornar o caminho do diretorio database, onde está o arquivo connection.ts
+        filename: path.resolve(__dirname, 'database.sqlite'), //uni caminhos, vai pegar o index.js da pasta database
+        //database.sqlite: vai criar um arquivo com esse nome
+        
+    },
+    //Aceitar null na criação
+    useNullAsDefault:true,
 })
 
+
 export default connection;
+
+// Migrations = Histórico do banco de dados
+
+// Cada vez que for fazer uma alteração, crie uma migration
