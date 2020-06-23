@@ -11,6 +11,10 @@ module.exports = {
         //diretorio onde ficará as migrations
         directory: path.resolve(__dirname, 'src', 'database','migrations'),
     },
+    seeds: {
+        //diretorio onde ficará as migrations
+        directory: path.resolve(__dirname, 'src', 'database','seeds'),
+    },
     //Aceitar null na criação
     useNullAsDefault:true,
 }
